@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A P Rishi Stores — Everyday Essentials, Alanganallur</title>
+  <meta name="description" content="A P Rishi Stores supplies groceries, rice, dals, sugar, cooking oils and everyday essentials in Alanganallur and nearby areas — retail and wholesale." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FBFAF7;
+      --white: #FFFFFF;
+      --ink: #17251F;
+      --muted: #66756C;
+
+      --green-950: #172B23;
+      --green-900: #223E34;
+      --green-800: #28483D;
+      --green-700: #315344;
+
+      --olive: #505D45;
+      --olive-dark: #3F4937;
+
+      --gold: #CF9D53;
+      --gold-light: #E2BF84;
+      --gold-dark: #A97831;
+
+      --line: rgba(23, 37, 31, 0.14);
+      --line-light: rgba(251, 250, 247, 0.22);
+
+      --shadow: 0 22px 60px rgba(23, 37, 31, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Work Sans", sans-serif;
+      line-height: 1.55;
+    }
+
+    body::selection,
+    ::selection {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.025em;
+    }
+
+    em {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      font-size: clamp(2.1rem, 4vw, 3.45rem);
+      max-width: 650px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- Header ---------- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-shell {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border: 1.5px solid var(--gold-dark);
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      font-family: "Fraunces", serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+    }
+
+    .brand-sub {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      font-size: 0.94rem;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .lang-toggle {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      min-height: 38px;
+      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: 0.25s ease;
+    }
+
+    .lang-toggle:hover {
+      background: var(--green-900);
+      color: var(--cream);
+      border-color: var(--green-900);
+    }
+
+    body.lang-ta .lang-toggle {
+      background: var(--green-900);
+      border-color: var(--green-900);
+      color: var(--cream);
+    }
+
+    .whatsapp-pill {
+      min-height: 42px;
+      padding: 10px 19px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      background: var(--green-900);
+      color: var(--cream);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: 0.25s ease;
+    }
+
+    .whatsapp-pill:hover {
+      background: var(--green-700);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(34, 62, 52, 0.22);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    /* ---------- Buttons ---------- */
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 13px 24px;
+      border: 1.5px solid transparent;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .button-gold:hover {
+      background: var(--gold-light);
+      box-shadow: 0 12px 28px rgba(207, 157, 83, 0.3);
+    }
+
+    .button-outline-light {
+      border-color: var(--line-light);
+      color: var(--cream);
+      background: transparent;
+    }
+
+    .button-outline-light:hover {
+      background: rgba(251, 250, 247, 0.1);
+    }
+
+    .button-outline-dark {
+      border-color: var(--line);
+      color: var(--ink);
+      background: transparent;
+    }
+
+    .button-outline-dark:hover {
+      background: rgba(23, 37, 31, 0.05);
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      min-height: 720px;
+      position: relative;
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(207, 157, 83, 0.18), transparent 34%),
+        radial-gradient(circle at 82% 100%, rgba(251, 250, 247, 0.76), transparent 34%),
+        linear-gradient(
+          112deg,
+          #22352D 0%,
+          #28443A 35%,
+          #617267 62%,
+          #B9C0BB 80%,
+          #FBFAF7 100%
+        );
+    }
+
+    body.lang-ta .hero {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(207, 157, 83, 0.2), transparent 34%),
+        radial-gradient(circle at 82% 100%, rgba(251, 250, 247, 0.68), transparent 34%),
+        linear-gradient(
+          112deg,
+          #172B23 0%,
+          #223E34 40%,
+          #4D6155 68%,
+          #AAB4AD 84%,
+          #FBFAF7 100%
+        );
+    }
+
+    body.language-pulse .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(207, 157, 83, 0.16), transparent);
+      animation: languageGlow 0.9s ease both;
+    }
+
+    @keyframes languageGlow {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      padding: 96px 0 70px;
+    }
+
+    .hero-item {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFadeUp 0.8s ease forwards;
+    }
+
+    .hero-item:nth-child(1) { animation-delay: 0.05s; }
+    .hero-item:nth-child(2) { animation-delay: 0.16s; }
+    .hero-item:nth-child(3) { animation-delay: 0.27s; }
+    .hero-item:nth-child(4) { animation-delay: 0.38s; }
+    .hero-item:nth-child(5) { animation-delay: 0.49s; }
+    .hero-item:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes heroFadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(3.3rem, 7.8vw, 6.5rem);
+      max-width: 760px;
+    }
+
+    .hero-lede-strong {
+      margin: 27px 0 0;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      font-weight: 600;
+    }
+
+    .hero-lede {
+      max-width: 650px;
+      margin: 16px 0 0;
+      color: rgba(251, 250, 247, 0.82);
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-phone {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 32px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .hero-strip {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid var(--line-light);
+      padding: 22px 0 28px;
+      display: flex;
+      gap: clamp(24px, 5vw, 62px);
+      flex-wrap: wrap;
+    }
+
+    .hero-strip span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(251, 250, 247, 0.84);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-strip span::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ---------- Trust cards ---------- */
+
+    .trust-section {
+      padding: 88px 0 76px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .trust-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 28px;
+      min-height: 178px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .trust-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .trust-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      background: rgba(207, 157, 83, 0.15);
+      font-weight: 700;
+    }
+
+    .trust-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 9px;
+    }
+
+    .trust-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* ---------- Products ---------- */
+
+    .products-section {
+      padding: 34px 0 92px;
+    }
+
+    .products-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .products-tools {
+      width: min(460px, 100%);
+    }
+
+    .search-box {
+      min-height: 58px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--green-800);
+      box-shadow: 0 0 0 4px rgba(34, 62, 52, 0.1);
+    }
+
+    .search-box input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      padding: 0 14px;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .search-box input::placeholder {
+      color: #8A948D;
+    }
+
+    .search-box button {
+      min-width: 92px;
+      min-height: 45px;
+      border: 0;
+      background: var(--green-900);
+      color: var(--cream);
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .search-box button:hover {
+      background: var(--green-700);
+    }
+
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 28px;
+    }
+
+    .category-button {
+      min-height: 42px;
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .category-button:hover,
+    .category-button.active {
+      background: var(--green-900);
+      color: var(--cream);
+      border-color: var(--green-900);
+    }
+
+    .product-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      min-height: 100%;
+      overflow: hidden;
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(207, 157, 83, 0.7);
+      box-shadow: 0 22px 50px rgba(23, 37, 31, 0.14);
+    }
+
+    .product-card:hover .product-title {
+      color: var(--green-800);
+    }
+
+    .product-card:hover .product-arrow {
+      transform: translateX(5px);
+      color: var(--gold-dark);
+    }
+
+    .product-visual {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 70% 20%, color-mix(in srgb, var(--accent) 35%, white), transparent 36%),
+        linear-gradient(145deg, #F3EFE7, #E7E1D4);
+    }
+
+    .product-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .product-card:hover .product-visual img {
+      transform: scale(1.06);
+    }
+
+    .visual-fallback {
+      display: none;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      place-items: center;
+      background: var(--accent);
+      color: var(--white);
+      font-family: "Fraunces", serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      box-shadow: 0 16px 34px rgba(23, 37, 31, 0.18);
+    }
+
+    .show-fallback .visual-fallback {
+      display: grid;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      padding: 6px 10px;
+      background: var(--green-900);
+      color: var(--cream);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-content {
+      padding: 22px;
+    }
+
+    .product-category {
+      color: var(--gold-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 9px;
+      text-transform: uppercase;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      margin-bottom: 9px;
+      transition: color 0.2s ease;
+    }
+
+    .product-description {
+      min-height: 66px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid var(--line);
+      padding-top: 15px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .product-price-note {
+      color: var(--green-800);
+    }
+
+    .product-arrow {
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      border: 1px dashed rgba(23, 37, 31, 0.25);
+      padding: 70px 25px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .empty-state h3 {
+      font-size: 1.55rem;
+      margin-bottom: 8px;
+    }
+
+    .empty-state p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* ---------- Grocery-list section ---------- */
+
+    .list-section {
+      background:
+        radial-gradient(circle at 88% 10%, rgba(207, 157, 83, 0.12), transparent 32%),
+        var(--green-900);
+      color: var(--cream);
+      padding: 88px 0;
+    }
+
+    .list-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(38px, 7vw, 100px);
+      align-items: center;
+    }
+
+    .list-section h2 {
+      font-size: clamp(2.4rem, 4.8vw, 4rem);
+      margin-bottom: 20px;
+    }
+
+    .list-section p {
+      color: rgba(251, 250, 247, 0.78);
+      max-width: 480px;
+      margin: 0;
+    }
+
+    .list-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      margin-top: 30px;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .list-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .list-form textarea,
+    .list-form input {
+      width: 100%;
+      border: 1px solid var(--line-light);
+      outline: 0;
+      background: rgba(251, 250, 247, 0.07);
+      color: var(--cream);
+      padding: 16px;
+      resize: vertical;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .list-form textarea {
+      min-height: 150px;
+    }
+
+    .list-form input::placeholder,
+    .list-form textarea::placeholder {
+      color: rgba(251, 250, 247, 0.55);
+    }
+
+    .list-form textarea:focus,
+    .list-form input:focus {
+      border-color: var(--gold);
+      background: rgba(251, 250, 247, 0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .input-error {
+      border-color: #E07A5F !important;
+    }
+
+    /* ---------- Wholesale section ---------- */
+
+    .wholesale-section {
+      padding: 88px 0;
+    }
+
+    .wholesale-panel {
+      background:
+        radial-gradient(circle at 88% 18%, rgba(207, 157, 83, 0.11), transparent 28%),
+        var(--olive);
+      color: var(--cream);
+      min-height: 390px;
+      padding: clamp(38px, 6vw, 70px);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wholesale-panel h2 {
+      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+      margin-bottom: 22px;
+    }
+
+    .wholesale-panel p {
+      max-width: 560px;
+      color: rgba(251, 250, 247, 0.8);
+      margin: 0 0 30px;
+    }
+
+    .bulk-circle {
+      width: min(280px, 75vw);
+      aspect-ratio: 1;
+      border: 1px solid rgba(251, 250, 247, 0.45);
+      border-radius: 50%;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      color: var(--cream);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      animation: slowFloat 5s ease-in-out infinite;
+    }
+
+    .bulk-circle strong {
+      color: var(--gold);
+      font-size: 2.3rem;
+      line-height: 1;
+    }
+
+    @keyframes slowFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* ---------- Product-detail page ---------- */
+
+    .detail-hero {
+      background:
+        radial-gradient(circle at 92% 15%, rgba(207, 157, 83, 0.11), transparent 34%),
+        var(--green-900);
+      color: var(--cream);
+      padding: 54px 0 62px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 28px;
+      transition: transform 0.2s ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-4px);
+    }
+
+    .detail-hero h1 {
+      font-size: clamp(3rem, 7vw, 5.6rem);
+    }
+
+    .detail-subtitle {
+      max-width: 680px;
+      margin: 16px 0 0;
+      color: rgba(251, 250, 247, 0.78);
+      font-size: 1.06rem;
+    }
+
+    .detail-body {
+      padding: 70px 0 90px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: clamp(36px, 6vw, 76px);
+      align-items: start;
+    }
+
+    .detail-media {
+      min-height: 480px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(207, 157, 83, 0.16), transparent 35%),
+        linear-gradient(145deg, #F5F0E5, #E5DECD);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: sticky;
+      top: 105px;
+    }
+
+    .detail-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+    }
+
+    .detail-fallback {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: none;
+      place-items: center;
+      background: var(--accent, var(--green-900));
+      color: var(--cream);
+      font-family: "Fraunces", serif;
+      font-size: 4rem;
+      font-weight: 700;
+      box-shadow: 0 26px 60px rgba(23, 37, 31, 0.2);
+    }
+
+    .detail-kicker {
+      color: var(--gold-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .detail-info h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 18px;
+    }
+
+    .detail-description {
+      color: var(--muted);
+      font-size: 1.03rem;
+      margin: 0 0 30px;
+    }
+
+    .pack-title {
+      margin: 0 0 14px;
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .pack-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .pack-item {
+      min-height: 44px;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      font-weight: 700;
+    }
+
+    .detail-note {
+      padding: 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(207, 157, 83, 0.1);
+      color: var(--green-900);
+      margin-bottom: 30px;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .related-section {
+      padding: 0 0 90px;
+    }
+
+    .related-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 26px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    /* ---------- Footer ---------- */
+
+    .site-footer {
+      background: var(--green-950);
+      color: var(--cream);
+      padding: 72px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 48px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .footer-brand .brand-mark {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .footer-heading {
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .footer-grid p {
+      color: rgba(251, 250, 247, 0.68);
+      max-width: 360px;
+      margin: 18px 0 0;
+    }
+
+    .footer-grid a {
+      display: block;
+      color: rgba(251, 250, 247, 0.78);
+      margin-bottom: 11px;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-grid a:hover {
+      color: var(--gold);
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      color: rgba(251, 250, 247, 0.52);
+      font-size: 0.88rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 110;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green-900);
+      color: var(--cream);
+      box-shadow: 0 14px 35px rgba(23, 37, 31, 0.28);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .floating-whatsapp:hover {
+      background: var(--gold);
+      color: var(--ink);
+      transform: translateY(-4px);
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 980px) {
+      .trust-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .list-grid,
+      .wholesale-panel,
+      .detail-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-media {
+        position: static;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 32px, 1160px);
+      }
+
+      .menu-button {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-actions {
+        position: fixed;
+        top: 76px;
+        left: 16px;
+        right: 16px;
+        z-index: 99;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--cream);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 12px;
+      }
+
+      .nav-open .nav-actions {
+        display: flex;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links a {
+        padding: 13px 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .lang-toggle,
+      .whatsapp-pill {
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding-top: 72px;
+      }
+
+      .products-top {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .products-tools {
+        width: 100%;
+      }
+
+      .trust-grid,
+      .product-grid,
+      .related-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-media,
+      .detail-media img {
+        min-height: 330px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="A P Rishi Stores home">
+        <span class="brand-mark">AP</span>
+        <span class="brand-text">
+          <span class="brand-name">A P RISHI</span>
+          <span class="brand-sub">STORES · ALANGANALLUR</span>
+        </span>
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+
+      <div class="nav-actions" id="navActions">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#top" data-en="Home" data-ta="முகப்பு">Home</a>
+          <a href="#products" data-en="Products" data-ta="பொருட்கள்">Products</a>
+          <a href="#wholesale" data-en="Wholesale" data-ta="மொத்த விற்பனை">Wholesale</a>
+          <a href="#contact" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+        </nav>
+
+        <button class="lang-toggle" id="languageToggle" type="button" aria-label="Change language">
+          <span>தமிழ்</span>
+        </button>
+
+        <a
+          class="whatsapp-pill"
+          href="https://wa.me/919865575560?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20A%20P%20Rishi%20Stores"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME VIEW -->
+    <div id="homeView">
+      <section class="hero" id="top">
+        <div class="container hero-inner">
+          <div class="eyebrow hero-item" data-en="Alanganallur • Madurai" data-ta="அலங்காநல்லூர் • மதுரை">
+            Alanganallur • Madurai
+          </div>
+
+          <h1 class="hero-item">
+            <span data-en="Your everyday grocery partner." data-ta="உங்கள் தினசரி மளிகைத் துணை.">
+              Your everyday grocery partner.
+            </span>
+          </h1>
+
+          <p class="hero-lede-strong hero-item">
+            <span data-en="Retail & wholesale — from homes to bulk orders." data-ta="சில்லறை மற்றும் மொத்த விற்பனை — வீடுகளில் இருந்து பெரும் ஆர்டர்கள் வரை.">
+              Retail &amp; wholesale — from homes to bulk orders.
+            </span>
+          </p>
+
+          <p class="hero-lede hero-item">
+            <span data-en="Groceries, rice, dals, sugar, cooking oils and everyday essentials for Alanganallur and surrounding areas." data-ta="அலங்காநல்லூர் மற்றும் அதன் சுற்றுவட்டாரங்களுக்கு மளிகை, அரிசி, பருப்பு, சர்க்கரை, சமையல் எண்ணெய் மற்றும் தினசரி தேவைகள்.">
+              Groceries, rice, dals, sugar, cooking oils and everyday essentials for Alanganallur and surrounding areas.
+            </span>
+          </p>
+
+          <div class="hero-actions hero-item">
+            <a class="button button-gold" href="#products">
+              <span data-en="Shop products" data-ta="பொருட்களைப் பார்க்க">Shop products</span> →
+            </a>
+            <a class="button button-outline-light" href="#wholesale">
+              <span data-en="Wholesale enquiry" data-ta="மொத்த விசாரணை">Wholesale enquiry</span>
+            </a>
+          </div>
+
+          <div class="hero-phone hero-item">
+            <span>☎</span>
+            <a href="tel:+919865575560">9865575560</a>
+          </div>
+        </div>
+
+        <div class="container hero-strip">
+          <span data-en="LOCAL STORE" data-ta="உள்ளூர் கடை">LOCAL STORE</span>
+          <span data-en="RETAIL + WHOLESALE" data-ta="சில்லறை + மொத்தம்">RETAIL + WHOLESALE</span>
+          <span data-en="WHATSAPP ENQUIRY" data-ta="WHATSAPP விசாரணை">WHATSAPP ENQUIRY</span>
+        </div>
+      </section>
+
+      <section class="trust-section">
+        <div class="container trust-grid">
+          <article class="trust-card reveal">
+            <div class="trust-icon">✓</div>
+            <h3 data-en="Shop for home" data-ta="வீட்டிற்கு வாங்க">Shop for home</h3>
+            <p data-en="Everyday essentials, selected for quality and value." data-ta="தரம் மற்றும் மதிப்பிற்காகத் தேர்ந்தெடுக்கப்பட்ட தினசரி பொருட்கள்.">
+              Everyday essentials, selected for quality and value.
+            </p>
+          </article>
+
+          <article class="trust-card reveal">
+            <div class="trust-icon">↔</div>
+            <h3 data-en="Retail + wholesale" data-ta="சில்லறை + மொத்தம்">Retail + wholesale</h3>
+            <p data-en="Single packets to full bags, with helpful guidance on quantity." data-ta="ஒரு பாக்கெட்டில் இருந்து முழு மூட்டை வரை, அளவு தொடர்பான வழிகாட்டுதலுடன்.">
+              Single packets to full bags, with helpful guidance on quantity.
+            </p>
+          </article>
+
+          <article class="trust-card reveal">
+            <div class="trust-icon">☰</div>
+            <h3 data-en="Grocery lists" data-ta="மளிகை பட்டியல்">Grocery lists</h3>
+            <p data-en="Send your list on WhatsApp and receive a quick, practical reply." data-ta="உங்கள் பட்டியலை WhatsApp-இல் அனுப்பி விரைவான பதிலைப் பெறுங்கள்.">
+              Send your list on WhatsApp and receive a quick, practical reply.
+            </p>
+          </article>
+
+          <article class="trust-card reveal">
+            <div class="trust-icon">↗</div>
+            <h3 data-en="Local supply" data-ta="உள்ளூர் விநியோகம்">Local supply</h3>
+            <p data-en="Serving homes, functions, caterers and nearby stores." data-ta="வீடுகள், சுப நிகழ்வுகள், கேட்டரிங் மற்றும் அருகிலுள்ள கடைகளுக்கு சேவை.">
+              Serving homes, functions, caterers and nearby stores.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="products-section" id="products">
+        <div class="container">
+          <div class="products-top reveal">
+            <div>
+              <div class="eyebrow" data-en="START HERE" data-ta="இங்கிருந்து தொடங்குங்கள்">START HERE</div>
+              <h2 class="section-heading">
+                <span data-en="Good groceries." data-ta="நல்ல மளிகை.">Good groceries.</span><br>
+                <em data-en="Good people." data-ta="நல்ல உறவுகள்.">Good people.</em>
+              </h2>
+            </div>
+
+            <div class="products-tools">
+              <div class="search-box">
+                <input
+                  id="productSearch"
+                  type="search"
+                  data-en-ph="Search rice, sugar, oil, dal and more..."
+                  data-ta-ph="அரிசி, சர்க்கரை, எண்ணெய், பருப்பு எனத் தேடுங்கள்..."
+                  placeholder="Search rice, sugar, oil, dal and more..."
+                >
+                <button type="button" data-en="Search" data-ta="தேடு">Search</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-row" id="categoryRow" aria-label="Product categories">
+            <button class="category-button active" type="button" data-category="all" data-en="All" data-ta="அனைத்தும்">All</button>
+            <button class="category-button" type="button" data-category="grains" data-en="Rice & Grains" data-ta="அரிசி & தானியங்கள்">Rice &amp; Grains</button>
+            <button class="category-button" type="button" data-category="cooking" data-en="Cooking Essentials" data-ta="சமையல் தேவைகள்">Cooking Essentials</button>
+            <button class="category-button" type="button" data-category="pulses" data-en="Dals & Pulses" data-ta="பருப்பு வகைகள்">Dals &amp; Pulses</button>
+            <button class="category-button" type="button" data-category="pantry" data-en="Pantry" data-ta="சிற்றுண்டி & பானங்கள்">Pantry</button>
+            <button class="category-button" type="button" data-category="household" data-en="Household" data-ta="வீட்டு தேவைகள்">Household</button>
+          </div>
+
+          <div class="product-meta-row">
+            <span id="productCount">8 products</span>
+            <span data-en="Retail + wholesale available" data-ta="சில்லறை + மொத்தம் கிடைக்கும்">Retail + wholesale available</span>
+          </div>
+
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </section>
+
+      <section class="list-section" id="list">
+        <div class="container list-grid">
+          <div class="reveal">
+            <div class="eyebrow" data-en="QUICKER THAN A CART" data-ta="கார்ட்டை விட விரைவு">QUICKER THAN A CART</div>
+            <h2 data-en="Send your grocery list" data-ta="உங்கள் மளிகை பட்டியலை அனுப்புங்கள்">Send your grocery list</h2>
+            <p data-en="Type or paste your list here. We'll help with availability and pricing — no account needed." data-ta="உங்கள் பட்டியலை இங்கு தட்டச்சு செய்யுங்கள். கிடைப்பதும் விலையும் குறித்து உதவுவோம் — கணக்கு தேவையில்லை.">
+              Type or paste your list here. We'll help with availability and pricing — no account needed.
+            </p>
+
+            <div class="list-points">
+              <span data-en="Type your list" data-ta="பட்டியலை எழுதுங்கள்">Type your list</span>
+              <span data-en="Get a quick reply" data-ta="விரைவான பதில் பெறுங்கள்">Get a quick reply</span>
+            </div>
+          </div>
+
+          <div class="list-form reveal">
+            <textarea
+              id="groceryList"
+              data-en-ph="Rice – 5 bags&#10;Sugar – 25 kg&#10;Cooking oil – 5 litres"
+              data-ta-ph="அரிசி – 5 மூட்டை&#10;சர்க்கரை – 25 கிலோ&#10;சமையல் எண்ணெய் – 5 லிட்டர்"
+              placeholder="Rice – 5 bags&#10;Sugar – 25 kg&#10;Cooking oil – 5 litres"
+            ></textarea>
+
+            <div class="form-row">
+              <input id="customerName" type="text" data-en-ph="Your name" data-ta-ph="உங்கள் பெயர்" placeholder="Your name">
+              <input id="customerPhone" type="tel" data-en-ph="Phone number *" data-ta-ph="தொலைபேசி எண் *" placeholder="Phone number *">
+            </div>
+
+            <button class="button button-gold" id="sendListButton" type="button">
+              <span data-en="Send list on WhatsApp" data-ta="WhatsApp-இல் பட்டியலை அனுப்பு">Send list on WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="wholesale-section" id="wholesale">
+        <div class="container">
+          <div class="wholesale-panel reveal">
+            <div>
+              <div class="eyebrow" data-en="FOR EVERY BIGGER MOMENT" data-ta="ஒவ்வொரு பெரிய நிகழ்விற்கும்">FOR EVERY BIGGER MOMENT</div>
+              <h2>
+                <span data-en="Planning a function," data-ta="ஒரு நிகழ்வைத் திட்டமிடுகிறீர்களா?">Planning a function,</span><br>
+                <em data-en="or filling a store?" data-ta="அல்லது கடையை நிரப்பவா?">or filling a store?</em>
+              </h2>
+              <p data-en="Tell us what you need. We'll help you work through quantities, availability and pricing." data-ta="உங்களுக்கு என்ன தேவை என்று சொல்லுங்கள். அளவு, கிடைப்பு மற்றும் விலை குறித்து உதவுவோம்.">
+                Tell us what you need. We'll help you work through quantities, availability and pricing.
+              </p>
+
+              <a
+                class="button button-gold"
+                href="https://wa.me/919865575560?text=Hi%2C%20I%27d%20like%20a%20wholesale%20quote%20from%20A%20P%20Rishi%20Stores"
+                target="_blank"
+                rel="noopener"
+              >
+                <span data-en="Talk to wholesale" data-ta="மொத்த விற்பனையுடன் பேசுங்கள்">Talk to wholesale</span> →
+              </a>
+            </div>
+
+            <div class="bulk-circle" aria-hidden="true">
+              <span data-en="HOME" data-ta="வீடு">HOME</span>
+              <strong>→</strong>
+              <span data-en="BULK" data-ta="மொத்தம்">BULK</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PRODUCT DETAIL VIEW -->
+    <div id="productView" hidden>
+      <section class="detail-hero">
+        <div class="container">
+          <a class="back-link" href="#products">← <span data-en="Back to products" data-ta="பொருட்களுக்குத் திரும்பு">Back to products</span></a>
+          <div class="eyebrow">A P RISHI STORES</div>
+          <h1 id="detailHeroTitle">Products</h1>
+          <p class="detail-subtitle" id="detailHeroSubtitle"></p>
+        </div>
+      </section>
+
+      <section class="detail-body">
+        <div class="container detail-grid">
+          <div class="detail-media" id="detailMedia"></div>
+
+          <div class="detail-info">
+            <div class="detail-kicker" id="detailCategory"></div>
+            <h2 id="detailName"></h2>
+            <p class="detail-description" id="detailDescription"></p>
+
+            <h3 class="pack-title" data-en="Available quantities" data-ta="கிடைக்கும் அளவுகள்">Available quantities</h3>
+            <div class="pack-grid" id="detailPacks"></div>
+
+            <div class="detail-note" id="detailNote"></div>
+
+            <div class="detail-actions">
+              <a class="button button-gold" id="detailWhatsapp" href="#" target="_blank" rel="noopener">
+                <span data-en="Ask today's price" data-ta="இன்றைய விலை கேட்க">Ask today's price</span> →
+              </a>
+              <a class="button button-outline-dark" href="tel:+919865575560">
+                <span data-en="Call store" data-ta="கடையை அழை">Call store</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-section">
+        <div class="container">
+          <h2 data-en="You may also need" data-ta="இவையும் உங்களுக்கு வேண்டும்">You may also need</h2>
+          <div class="related-grid" id="relatedGrid"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <span class="brand-mark">AP</span>
+            <span class="brand-text">
+              <span class="brand-name">A P RISHI</span>
+              <span class="brand-sub">STORES · ALANGANALLUR</span>
+            </span>
+          </div>
+          <p data-en="Everyday essentials for your kitchen — with retail and wholesale support from a local store you can talk to." data-ta="உங்கள் சமையலறைக்குத் தினசரி தேவைகள் — நேரடியாகப் பேசக்கூடிய உள்ளூர் கடையின் சில்லறை மற்றும் மொத்த ஆதரவுடன்.">
+            Everyday essentials for your kitchen — with retail and wholesale support from a local store you can talk to.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" data-en="Visit us" data-ta="எங்களைப் பார்வையிட">Visit us</h4>
+          <a href="https://maps.google.com/?q=Alanganallur,Madurai" target="_blank" rel="noopener">
+            <span data-en="Alanganallur, Madurai," data-ta="அலங்காநல்லூர், மதுரை,">Alanganallur, Madurai,</span><br>
+            <span data-en="Tamil Nadu" data-ta="தமிழ்நாடு">Tamil Nadu</span>
+          </a>
+          <a href="https://maps.google.com/?q=Alanganallur,Madurai" target="_blank" rel="noopener">
+            <span data-en="Get directions →" data-ta="வழிகளைப் பெற →">Get directions →</span>
+          </a>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" data-en="Talk to us" data-ta="எங்களுடன் பேசுங்கள்">Talk to us</h4>
+          <a href="tel:+919865575560">9865575560</a>
+          <a href="mailto:aprishistores1@gmail.com">aprishistores1@gmail.com</a>
+          <a href="https://wa.me/919865575560" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 A P RISHI STORES</span>
+        <span>Alanganallur, Madurai, Tamil Nadu</span>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/919865575560"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 20l1.4-4.2A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M8.6 9.1c.2 3.1 3.1 6.2 6.2 6.6l1-1.4c.2-.3.6-.4.9-.2l1.7.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <script>
+    const PHONE_NUMBER = "919865575560";
+
+    const PRODUCTS = [
+      {
+        slug: "idly-rice",
+        category: "grains",
+        accent: "#D2A65F",
+        fallback: "IR",
+        image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Bestseller", ta: "அதிக விற்பனை" },
+        name: {
+          en: "No.1 Idly Rice",
+          ta: "நம்பர் 1 இட்லி அரிசி"
+        },
+        description: {
+          en: "Soft, aromatic rice suited for idly, dosa and everyday family cooking. Available in retail and bulk bags.",
+          ta: "இட்லி, தோசை மற்றும் தினசரி சமையலுக்கு ஏற்ற மென்மையான, நறுமணமிக்க அரிசி. சில்லறை மற்றும் மொத்த மூட்டைகளில் கிடைக்கும்."
+        },
+        packs: ["1 kg", "5 kg", "10 kg", "25 kg", "50 kg bag"]
+      },
+      {
+        slug: "premium-sugar",
+        category: "cooking",
+        accent: "#9AAF9B",
+        fallback: "S",
+        image: "https://images.unsplash.com/photo-1581441363689-1f3c3c4145dc?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Daily essential", ta: "தினசரி தேவை" },
+        name: {
+          en: "Premium Sugar",
+          ta: "நல்ல தர சர்க்கரை"
+        },
+        description: {
+          en: "Clean, free-flowing sugar for tea, coffee, sweets and daily kitchen use. Ask for today's bag pricing.",
+          ta: "தேநீர், காபி, இனிப்புகள் மற்றும் தினசரி சமையலுக்கான தூய்மையான சர்க்கரை. இன்றைய மூட்டை விலையைக் கேட்கவும்."
+        },
+        packs: ["500 g", "1 kg", "5 kg", "25 kg bag"]
+      },
+      {
+        slug: "sunflower-oil",
+        category: "cooking",
+        accent: "#D4A72C",
+        fallback: "O",
+        image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Popular", ta: "பிரபலம்" },
+        name: {
+          en: "Sunflower Oil",
+          ta: "சூரியகாந்தி எண்ணெய்"
+        },
+        description: {
+          en: "Light cooking oil for everyday frying, cooking and bakery needs, available in multiple bottle sizes.",
+          ta: "தினசரி வறுத்தல், சமையல் மற்றும் பேக்கரி தேவைகளுக்கான இலகுவான சமையல் எண்ணெய்; பல பாட்டில் அளவுகளில் கிடைக்கும்."
+        },
+        packs: ["500 ml", "1 litre", "2 litres", "5 litres", "15 litre tin"]
+      },
+      {
+        slug: "toor-dal",
+        category: "pulses",
+        accent: "#D8912F",
+        fallback: "D",
+        image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Protein rich", ta: "புரதம் நிறைந்தது" },
+        name: {
+          en: "Premium Toor Dal",
+          ta: "நல்ல தர துவரம் பருப்பு"
+        },
+        description: {
+          en: "Well-cleaned toor dal for sambar, rasam and traditional South Indian cooking.",
+          ta: "சாம்பார், ரசம் மற்றும் பாரம்பரிய தென்னிந்திய சமையலுக்காக நன்கு சுத்தம் செய்யப்பட்ட துவரம் பருப்பு."
+        },
+        packs: ["500 g", "1 kg", "5 kg", "10 kg", "25 kg bag"]
+      },
+      {
+        slug: "masala-spices",
+        category: "cooking",
+        accent: "#A84D37",
+        fallback: "M",
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Fresh stock", ta: "புதிய இருப்பு" },
+        name: {
+          en: "Masala & Spices",
+          ta: "மசாலா & மூலிகைகள்"
+        },
+        description: {
+          en: "Everyday masalas, whole spices and seasoning essentials for flavourful home cooking.",
+          ta: "சுவையான வீட்டுச் சமையலுக்கான தினசரி மசாலா, முழு மூலிகைகள் மற்றும் சுவையூட்டிகள்."
+        },
+        packs: ["100 g", "250 g", "500 g", "1 kg"]
+      },
+      {
+        slug: "wheat-atta",
+        category: "grains",
+        accent: "#B99362",
+        fallback: "A",
+        image: "https://images.unsplash.com/photo-1627485937980-221c88ac04f9?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Fresh ground", ta: "புதிய அரைப்பு" },
+        name: {
+          en: "Whole Wheat Atta",
+          ta: "முழு கோதுமை மாவு"
+        },
+        description: {
+          en: "Reliable wheat flour for soft chapatis, rotis and everyday Indian breads.",
+          ta: "மென்மையான சப்பாத்தி, ரொட்டி மற்றும் தினசரி இந்திய ரொட்டிகளுக்கான நம்பகமான கோதுமை மாவு."
+        },
+        packs: ["1 kg", "2 kg", "5 kg", "10 kg"]
+      },
+      {
+        slug: "tea-coffee",
+        category: "pantry",
+        accent: "#78523B",
+        fallback: "T",
+        image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1000&q=85",
+        tag: { en: "Morning shelf", ta: "காலை அலமாரி" },
+        name: {
+          en: "Tea & Coffee",
+          ta: "தேநீர் & காபி"
+        },
+        description: {
+          en: "Tea, coffee and breakfast essentials for homes, offices and small shops.",
+          ta: "வீடுகள், அலுவலகங்கள் மற்றும் சிறிய கடைகளுக்கான தேநீர், காபி மற்றும் காலை உணவுப் பொருட்கள்."
+        },
+        packs: ["100 g", "250 g", "500 g", "1 kg"]
+      },
+      {
+        slug: "household-essentials",
+        category: "household",
+        accent: "#557C83",
+        fallback: "H",
+        image: "",
+        tag: { en: "Home care", ta: "வீட்டு பராமரிப்பு" },
+        name: {
+          en: "Household Essentials",
+          ta: "வீட்டு தேவைப் பொருட்கள்"
+        },
+        description: {
+          en: "Cleaning and household basics, from soap and detergent to useful everyday items.",
+          ta: "சோப்பு, வாஷிங் பவுடர் மற்றும் பயனுள்ள தினசரி பொருட்கள் உள்ளிட்ட சுத்தம் மற்றும் வீட்டு அத்தியாவசியங்கள்."
+        },
+        packs: ["Single piece", "Retail pack", "Bulk pack"]
+      }
+    ];
+
+    const CATEGORY_LABELS = {
+      grains: { en: "Rice & Grains", ta: "அரிசி & தானியங்கள்" },
+      cooking: { en: "Cooking Essentials", ta: "சமையல் தேவைகள்" },
+      pulses: { en: "Dals & Pulses", ta: "பருப்பு வகைகள்" },
+      pantry: { en: "Pantry", ta: "சிற்றுண்டி & பானங்கள்" },
+      household: { en: "Household", ta: "வீட்டு தேவைகள்" }
+    };
+
+    let currentLanguage = "en";
+    let selectedCategory = "all";
+    let currentProduct = null;
+
+    const homeView = document.getElementById("homeView");
+    const productView = document.getElementById("productView");
+    const productGrid = document.getElementById("productGrid");
+    const productSearch = document.getElementById("productSearch");
+    const productCount = document.getElementById("productCount");
+    const categoryRow = document.getElementById("categoryRow");
+    const languageToggle = document.getElementById("languageToggle");
+    const menuButton = document.getElementById("menuButton");
+    const navActions = document.getElementById("navActions");
+
+    function getSavedLanguage() {
+      try {
+        return localStorage.getItem("ap-rishi-language") || "en";
+      } catch {
+        return "en";
+      }
+    }
+
+    function saveLanguage(language) {
+      try {
+        localStorage.setItem("ap-rishi-language", language);
+      } catch {}
+    }
+
+    function productImageTemplate(product, detail = false) {
+      const image = product.image
+        ? `<img
+            src="${product.image}"
+            alt="${product.name[currentLanguage]}"
+            loading="lazy"
+            onerror="this.remove();this.parentElement.classList.add('show-fallback')"
+          >`
+        : "";
+
+      const fallback = detail
+        ? `<span class="detail-fallback" style="--accent:${product.accent};display:grid">${product.fallback}</span>`
+        : `<span class="visual-fallback" style="--accent:${product.accent}">${product.fallback}</span>`;
+
+      return image + fallback;
+    }
+
+    function getFilteredProducts() {
+      const query = productSearch.value.trim().toLowerCase();
+
+      return PRODUCTS.filter((product) => {
+        const inCategory =
+          selectedCategory === "all" || product.category === selectedCategory;
+
+        const searchableText = [
+          product.name.en,
+          product.name.ta,
+          product.description.en,
+          product.description.ta,
+          CATEGORY_LABELS[product.category].en,
+          CATEGORY_LABELS[product.category].ta
+        ].join(" ").toLowerCase();
+
+        return inCategory && (!query || searchableText.includes(query));
+      });
+    }
+
+    function renderProducts() {
+      const products = getFilteredProducts();
+
+      productCount.textContent = currentLanguage === "ta"
+        ? `${products.length} பொருட்கள்`
+        : `${products.length} products`;
+
+      if (!products.length) {
+        productGrid.innerHTML = `
+          <div class="empty-state">
+            <h3>${currentLanguage === "ta" ? "முடிவுகள் இல்லை" : "No products found"}</h3>
+            <p>${currentLanguage === "ta"
+              ? "வேறு சொல் முயற்சிக்கவும் அல்லது WhatsApp-இல் எங்களைக் கேட்கவும்."
+              : "Try another word or ask us on WhatsApp."}</p>
+          </div>
+        `;
+        return;
+      }
+
+      productGrid.innerHTML = products.map((product) => `
+        <article class="product-card">
+          <a href="#/product/${product.slug}" aria-label="${product.name[currentLanguage]}">
+            <div class="product-visual" style="--accent:${product.accent}">
+              <span class="product-badge">${product.tag[currentLanguage]}</span>
+              ${productImageTemplate(product)}
+            </div>
+
+            <div class="product-content">
+              <div class="product-category">${CATEGORY_LABELS[product.category][currentLanguage]}</div>
+              <h3 class="product-title">${product.name[currentLanguage]}</h3>
+              <p class="product-description">${product.description[currentLanguage]}</p>
+
+              <div class="product-footer">
+                <span class="product-price-note">
+                  ${currentLanguage === "ta" ? "இன்றைய விலை கேட்க" : "Ask today's price"}
+                </span>
+                <span class="product-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      `).join("");
+    }
+
+    function showHome() {
+      currentProduct = null;
+      homeView.hidden = false;
+      productView.hidden = true;
+      document.title = "A P Rishi Stores — Everyday Essentials, Alanganallur";
+    }
+
+    function getWhatsAppLink(product) {
+      const message = currentLanguage === "ta"
+        ? `வணக்கம், ${product.name.ta} பற்றிய இன்றைய விலை மற்றும் கிடைப்பதை அறிய விரும்புகிறேன்.`
+        : `Hi, I'd like to know today's price and availability for ${product.name.en}.`;
+
+      return `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function renderRelatedProducts(current) {
+      const related = PRODUCTS
+        .filter((product) => product.slug !== current.slug)
+        .sort((a, b) => {
+          const scoreA = a.category === current.category ? 0 : 1;
+          const scoreB = b.category === current.category ? 0 : 1;
+          return scoreA - scoreB;
+        })
+        .slice(0, 3);
+
+      document.getElementById("relatedGrid").innerHTML = related.map((product) => `
+        <article class="product-card">
+          <a href="#/product/${product.slug}">
+            <div class="product-visual" style="--accent:${product.accent}">
+              <span class="product-badge">${product.tag[currentLanguage]}</span>
+              ${productImageTemplate(product)}
+            </div>
+            <div class="product-content">
+              <div class="product-category">${CATEGORY_LABELS[product.category][currentLanguage]}</div>
+              <h3 class="product-title">${product.name[currentLanguage]}</h3>
+              <div class="product-footer">
+                <span class="product-price-note">
+                  ${currentLanguage === "ta" ? "விவரம் காண" : "View details"}
+                </span>
+                <span class="product-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      `).join("");
+    }
+
+    function showProduct(slug, shouldScroll = true) {
+      const product = PRODUCTS.find((item) => item.slug === slug);
+
+      if (!product) {
+        location.hash = "#products";
+        return;
+      }
+
+      currentProduct = product;
+      homeView.hidden = true;
+      productView.hidden = false;
+
+      document.title = `${product.name.en} — A P Rishi Stores`;
+
+      document.getElementById("detailHeroTitle").textContent =
+        product.name[currentLanguage];
+
+      document.getElementById("detailHeroSubtitle").textContent =
+        currentLanguage === "ta"
+          ? "கிடைப்பது மற்றும் இன்றைய விலையை உறுதிப்படுத்த எங்களை அணுகவும்."
+          : "Check availability and today's pricing with our store.";
+
+      const detailMedia = document.getElementById("detailMedia");
+      detailMedia.style.setProperty("--accent", product.accent);
+      detailMedia.innerHTML = productImageTemplate(product, true);
+
+      document.getElementById("detailCategory").textContent =
+        CATEGORY_LABELS[product.category][currentLanguage];
+
+      document.getElementById("detailName").textContent =
+        product.name[currentLanguage];
+
+      document.getElementById("detailDescription").textContent =
+        product.description[currentLanguage];
+
+      document.getElementById("detailPacks").innerHTML =
+        product.packs.map((pack) => `<span class="pack-item">${pack}</span>`).join("");
+
+      document.getElementById("detailNote").textContent =
+        currentLanguage === "ta"
+          ? "விலைகள் அன்றாடம் மாறலாம். துல்லியமான விலைக்கு WhatsApp அல்லது அழைப்பின் மூலம் உறுதிப்படுத்தவும்."
+          : "Prices may change daily. Please confirm the exact price on WhatsApp or by phone.";
+
+      document.getElementById("detailWhatsapp").href = getWhatsAppLink(product);
+
+      renderRelatedProducts(product);
+
+      if (shouldScroll) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function updateStaticText() {
+      document.documentElement.lang = currentLanguage;
+      document.body.classList.toggle("lang-ta", currentLanguage === "ta");
+
+      document.querySelectorAll("[data-en]").forEach((element) => {
+        const value = element.dataset[currentLanguage];
+        if (typeof value === "string") {
+          element.textContent = value;
+        }
+      });
+
+      document.querySelectorAll("[data-en-ph]").forEach((element) => {
+        const value =
+          currentLanguage === "ta"
+            ? element.dataset.taPh
+            : element.dataset.enPh;
+
+        if (typeof value === "string") {
+          element.placeholder = value;
+        }
+      });
+
+      languageToggle.querySelector("span").textContent =
+        currentLanguage === "ta" ? "English" : "தமிழ்";
+
+      categoryRow.querySelectorAll(".category-button").forEach((button) => {
+        button.textContent =
+          currentLanguage === "ta" ? button.dataset.ta : button.dataset.en;
+      });
+    }
+
+    function applyLanguage(language) {
+      currentLanguage = language;
+      saveLanguage(language);
+      updateStaticText();
+      renderProducts();
+
+      if (currentProduct) {
+        showProduct(currentProduct.slug, false);
+      }
+
+      document.body.classList.remove("language-pulse");
+      void document.body.offsetWidth;
+      document.body.classList.add("language-pulse");
+
+      window.setTimeout(() => {
+        document.body.classList.remove("language-pulse");
+      }, 950);
+    }
+
+    function routePage() {
+      const hash = window.location.hash;
+
+      if (hash.startsWith("#/product/")) {
+        const slug = hash.replace("#/product/", "");
+        showProduct(slug);
+      } else {
+        showHome();
+      }
+    }
+
+    languageToggle.addEventListener("click", () => {
+      applyLanguage(currentLanguage === "en" ? "ta" : "en");
+    });
+
+    productSearch.addEventListener("input", renderProducts);
+
+    categoryRow.addEventListener("click", (event) => {
+      const button = event.target.closest(".category-button");
+      if (!button) return;
+
+      selectedCategory = button.dataset.category;
+
+      categoryRow
+        .querySelectorAll(".category-button")
+        .forEach((item) => item.classList.remove("active"));
+
+      button.classList.add("active");
+      renderProducts();
+    });
+
+    menuButton.addEventListener("click", () => {
+      document.body.classList.toggle("nav-open");
+    });
+
+    navActions.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        document.body.classList.remove("nav-open");
+      }
+    });
+
+    document.getElementById("sendListButton").addEventListener("click", () => {
+      const list = document.getElementById("groceryList").value.trim();
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const phoneInput = document.getElementById("customerPhone");
+
+      phoneInput.classList.remove("input-error");
+
+      if (!phone) {
+        phoneInput.classList.add("input-error");
+        phoneInput.focus();
+        return;
+      }
+
+      const lines = currentLanguage === "ta"
+        ? ["வணக்கம், A P Rishi Stores-ல் இருந்து பின்வரும் மளிகை பொருட்களை ஆர்டர் செய்ய விரும்புகிறேன்:"]
+        : ["Hi, I'd like to order the following groceries from A P Rishi Stores:"];
+
+      if (list) lines.push(list);
+      if (name) lines.push(currentLanguage === "ta" ? `பெயர்: ${name}` : `Name: ${name}`);
+      lines.push(currentLanguage === "ta" ? `தொலைபேசி: ${phone}` : `Phone: ${phone}`);
+
+      window.open(
+        `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`,
+        "_blank"
+      );
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    currentLanguage = getSavedLanguage() === "ta" ? "ta" : "en";
+    updateStaticText();
+    renderProducts();
+    routePage();
+
+    window.addEventListener("hashchange", routePage);
+  </script>
+</body>
+</html>
